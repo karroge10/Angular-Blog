@@ -1,0 +1,48 @@
+
+.button-back{
+    align-self: flex-start;
+    margin-top: 50px;
+    padding: 10px 30px;
+    font-size: 18px;
+}
+.editor-header{
+    margin: 20px 0;
+    align-self: flex-start;
+}
+.post-title{
+    margin-bottom: 20px;
+    height: 40px;
+}
+.post-content{
+    height: 50%;
+}
+input,textarea{
+    resize: none;
+    width: 100%;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: 1px solid rgb(126, 126, 126);
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+}
+.buttons{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons .delete{
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: rgb(241, 193, 193);
+}
+.buttons .delete:hover{
+    background-color: rgb(241, 215, 215);
+}
+.buttons .save{
+    padding: 10px 25px;
+    font-size: 16px;
+}

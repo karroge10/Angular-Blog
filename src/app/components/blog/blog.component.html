@@ -1,0 +1,15 @@
+<div class="blog">
+    <div class="header"><h1>Блог</h1></div>
+    <div class="container">
+      <div class="blog-posts">
+        <app-post [item]="posts"></app-post>
+        <app-post [item]="data"></app-post>
+        <app-post [item]="data"></app-post>
+        <!-- С помощью *ngFor проходим по массиву posts и рендерим <app-post> компонент для каждого обьекта в массиве posts -->
+        <!-- С помощью [item]="posts.title" передаем компоненту параметр item -->
+        <app-post *ngFor="let post of posts" [item]="posts">{{post.title}}</app-post>
+      </div>
+    </div>
+    <button routerLink="/editor" class="add-button">+Добавить</button>
+</div>
+  

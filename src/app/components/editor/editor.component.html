@@ -1,0 +1,13 @@
+<div class="blog">
+    <button routerLink="/" class="button-back">Назад</button>
+    <div class="editor-header">
+        <h1>Запись</h1>
+    </div>
+    <input placeholder="Title записи" class="post-title" type="text" id="title" name="title" [(ngModel)]="title">
+    <textarea rows="4" cols="50" placeholder="Контент записи" class="post-content" type="text" id="content" name="content" [(ngModel)]="content"></textarea>
+    <div class="buttons">
+        <button class="delete">Удалить</button>
+        <button class="save" (click)="savePost()">Сохранить</button>
+    </div>
+</div>
+
