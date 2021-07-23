@@ -12,6 +12,6 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
   // устанавливает дефолтные значения 
-  @Input() item = 0
-  @Input() posts = []
+  @Input() title = ''
+  @Input() content = ''
 }

@@ -16,7 +16,7 @@ export class BlogComponent implements OnInit {
     {title: 'второй', content: 'контент второго поста'},
     {title: 'третий', content: 'контент третьего поста'},
     {title: 'четвертый', content: 'контент четвертого поста'},
-    {title: 'пятый', content: 'контент пятого поста'},
+    {title: 'еще один', content: 'какой то пост'}
   ]
   data = 5;
 }

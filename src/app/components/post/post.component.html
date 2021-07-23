@@ -1,10 +1,9 @@
 
 <div class="blog-post">
-    <!-- [item] получаем из .ts файла компонента родителя (blog) -->
-    <div class="post-title">{{item}}</div>
+    <!-- [title] и [content] получаем из .ts файла компонента родителя (blog) -->
+    <div class="post-title">{{title}}</div>
     <div class="post-content-box">
-        <textarea readonly rows="4" cols="50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur atque quo repellat rerum tenetur sed delectus nesciunt dolorem autem nemo quam numquam, reprehenderit, a eveniet. Maiores voluptate temporibus dolore dolor.</textarea>
+        <textarea readonly rows="4" cols="50">{{content}}</textarea>
     </div>
     <button class="post-button">перейти</button>
 </div>
-<!--     <div class="post-title" *ngFor="let item of posts">{{item.title}}</div> -->
