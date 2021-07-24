@@ -3,11 +3,12 @@
     <div class="editor-header">
         <h1>Запись</h1>
     </div>
-    <input placeholder="Title записи" class="post-title" type="text" id="title" name="title" [(ngModel)]="title">
+    <!-- С помощью two-way binding обновляем измененные значения title и content -->
+    <input autofocus placeholder="Title записи" class="post-title" type="text" id="title" name="title" [(ngModel)]="title">
     <textarea rows="4" cols="50" placeholder="Контент записи" class="post-content" type="text" id="content" name="content" [(ngModel)]="content"></textarea>
     <div class="buttons">
-        <button class="delete">Удалить</button>
-        <button class="save" (click)="savePost()">Сохранить</button>
+        <button class="delete" (click)="delete()" routerLink="/">Удалить</button>
+        <button class="save" (click)="save()" routerLink="/">Сохранить</button>
     </div>
 </div>
 

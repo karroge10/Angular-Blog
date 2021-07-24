@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/blog.service';
 
 @Component({
   selector: 'app-post',
@@ -7,11 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+    // устанавливает дефолтные значения 
+  @Input() title = ''
+  @Input() content = ''
+  @Input() id = 0
+
+ 
+  open(){
+    this.blogService.openPost(this);
+  }
+
+  constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
   }
-  // устанавливает дефолтные значения 
-  @Input() title = ''
-  @Input() content = ''
+
+
 }

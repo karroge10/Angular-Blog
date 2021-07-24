@@ -2,11 +2,11 @@
     <div class="header"><h1>Блог</h1></div>
     <div class="container">
       <div class="blog-posts">
-        <!-- С помощью *ngFor проходим по массиву posts и рендерим <app-post> компонент для каждого обьекта в массиве posts -->
-        <!-- [title]="posts.title" и [content]="post.content" передаем компоненту параметр item -->
-        <app-post *ngFor="let post of posts" [title]="post.title" [content]="post.content"></app-post>
+        <!-- С помощью *ngFor проходим по массиву posts и рендерим <app-post> компонент для каждого объекта в массиве posts -->
+        <!-- Передаем компоненту параметры title, content, id -->
+        <app-post *ngFor="let post of posts" [title]="post.title" [content]="post.content" [id]="post.id"></app-post>
       </div>
     </div>
-    <button routerLink="/editor" class="add-button">+Добавить</button>
+    <button routerLink="/editor" class="add-button" (click)="resetCurrentPost()">+Добавить</button>
 </div>
   

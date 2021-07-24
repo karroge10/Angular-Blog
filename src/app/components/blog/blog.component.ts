@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,16 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  posts = this.blogService.getPosts();
+  
+  constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
+     
   }
-  posts = [
-    {title: 'первый', content: 'контент первого поста'},
-    {title: 'второй', content: 'контент второго поста'},
-    {title: 'третий', content: 'контент третьего поста'},
-    {title: 'четвертый', content: 'контент четвертого поста'},
-    {title: 'еще один', content: 'какой то пост'}
-  ]
-  data = 5;
+  
+  resetCurrentPost() {
+    this.blogService.resetCurrent()
+  }
 }
