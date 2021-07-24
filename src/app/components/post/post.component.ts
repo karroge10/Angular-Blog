@@ -11,8 +11,6 @@ export class PostComponent implements OnInit {
     // устанавливает дефолтные значения 
   @Input() title = ''
   @Input() content = ''
-  @Input() id = 0
-
  
   open(){
     this.blogService.openPost(this);

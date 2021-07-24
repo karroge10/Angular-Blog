@@ -9,14 +9,15 @@ import { BlogService } from 'src/app/blog.service';
 export class BlogComponent implements OnInit {
 
   posts = this.blogService.getPosts();
+    
+  resetCurrentPost() {
+    this.blogService.resetCurrent()
+  }
   
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
      
   }
-  
-  resetCurrentPost() {
-    this.blogService.resetCurrent()
-  }
+
 }

@@ -3,8 +3,8 @@
     <div class="container">
       <div class="blog-posts">
         <!-- С помощью *ngFor проходим по массиву posts и рендерим <app-post> компонент для каждого объекта в массиве posts -->
-        <!-- Передаем компоненту параметры title, content, id -->
-        <app-post *ngFor="let post of posts" [title]="post.title" [content]="post.content" [id]="post.id"></app-post>
+        <!-- Передаем компоненту параметры title, content -->
+        <app-post *ngFor="let post of posts" [title]="post.title" [content]="post.content"></app-post>
       </div>
     </div>
     <button routerLink="/editor" class="add-button" (click)="resetCurrentPost()">+Добавить</button>

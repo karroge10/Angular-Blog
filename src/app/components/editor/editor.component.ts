@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/blog.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editor',
@@ -12,13 +13,11 @@ export class EditorComponent implements OnInit {
   posts = this.blogService.getPosts();
   currentPost = this.blogService.getCurrentPost();
   
-  constructor(private blogService: BlogService) { }
+  constructor(private blogService: BlogService, public router: Router) { }
   
   // Задаем значения title и content, чтобы они отображались правильно при открытии поста
   @Input() title : string = this.currentPost.title;
   @Input() content : string = this.currentPost.content;
-  @Input() id : number = this.currentPost.id;
-   // id надо получать из прошлого а мы получаем из значения которое всегда обновляется и равно 0
 
   isPostNew = false;
   ngOnInit() {
@@ -29,35 +28,39 @@ export class EditorComponent implements OnInit {
     }
   }
 
-  // Добавляем пост через сервис
+  // Если пост старый то обновляем его, если новый то добавляем его 
   save() {
-    if (this.isPostNew == true){
-      var post = {
-        title: this.title,
-        content: this.content,
-        id: this.id
-      }
-      this.blogService.addToBlog(post);
+    if (this.title == '' || this.content == ''){
+      alert('Не все поля заполнены')
+      this.router.navigate(['/editor']);
     } else {
-      var post = {
-        title: this.title,
-        content: this.content,
-        id: this.id
-      }
-      this.blogService.updatePost(post)
+      if (this.isPostNew == true){
+        var post = {
+          title: this.title,
+          content: this.content
+        }
+        this.blogService.addToBlog(post);
+      } else {
+        var post = {
+          title: this.title,
+          content: this.content
+        }
+        this.blogService.updatePost(post, this.currentPost)
+      }  
     }
-
+    
   }
 
   // Удаляем пост через сервис
   delete() {
     if (confirm('Вы уверены что хотите удалить пост?')) {
       var post = {
-        title: this.title,
-        content: this.content,
-        id: this.id
+        title: this.currentPost.title,
+        content: this.currentPost.content
       }
       this.blogService.deletePost(post)
+    } else {
+      this.router.navigate(['/editor']);
     }
   }
 
