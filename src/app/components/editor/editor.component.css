@@ -1,4 +1,7 @@
-
+.container{
+    width: 60%;
+    margin: 0 auto;
+}
 .button-back{
     align-self: flex-start;
     margin-top: 50px;
@@ -45,4 +48,11 @@ input:focus, textarea:focus{
 .buttons .save{
     padding: 10px 25px;
     font-size: 16px;
+}
+
+@media screen and (max-width:  1100px){
+    .container{
+        width: 100%;
+        margin: 0 auto;
+    }
 }
