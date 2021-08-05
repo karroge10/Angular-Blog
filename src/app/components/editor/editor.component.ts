@@ -24,7 +24,7 @@ export class EditorComponent implements OnInit {
     if (this.currentPost.title == '' && this.currentPost.content == ''){
       this.isPostNew = true;
     } else {
-      this.isPostNew = false
+      this.isPostNew = false;
     }
   }
 
