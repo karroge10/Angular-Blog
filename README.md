@@ -1,4 +1,4 @@
-## Использование
-### Установить необходимый модуль `npm install --save-dev @angular-devkit/build-angular`
-### Запустить через `ng serve`
-### `http://localhost:4200/`
+## Usage
+### Install necessary modules `npm install --save-dev @angular-devkit/build-angular`
+### Start with `ng serve`
+### Open `http://localhost:4200/`
